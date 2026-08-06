@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Big Art's Brand - Warm Coral Red with Cream accents */
+    --background: 30 25% 97%;
+    --foreground: 15 30% 12%;
+
+    --card: 30 20% 95%;
+    --card-foreground: 15 30% 12%;
+
+    --popover: 30 25% 97%;
+    --popover-foreground: 15 30% 12%;
+
+    /* Coral Red - exact match to logo #BD1D27 */
+    --primary: 356 74% 43%;
+    --primary-foreground: 30 30% 98%;
+
+    /* Deep warm brown/maroon */
+    --secondary: 4 55% 35%;
+    --secondary-foreground: 30 30% 98%;
+
+    /* Warm cream tones */
+    --muted: 30 20% 92%;
+    --muted-foreground: 15 20% 40%;
+
+    /* Warm gold/tan accent */
+    --accent: 35 60% 70%;
+    --accent-foreground: 15 30% 12%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 30 30% 98%;
+
+    --border: 30 15% 85%;
+    --input: 30 15% 85%;
+    --ring: 4 72% 56%;
+
+    --radius: 0.5rem;
+
+    /* Custom brand tokens */
+    --brand-coral: 4 72% 56%;
+    --brand-maroon: 4 55% 35%;
+    --brand-cream: 30 30% 98%;
+    --brand-charcoal: 15 30% 12%;
+    --brand-tan: 35 60% 70%;
+    --brand-dark: 4 45% 25%;
+    
+    /* Gradients */
+    --gradient-warm: linear-gradient(135deg, hsl(4 72% 56%) 0%, hsl(4 55% 45%) 100%);
+    --gradient-hero: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(30 25% 97%) 0%, hsl(30 20% 94%) 100%);
+    --gradient-dark: linear-gradient(135deg, hsl(4 55% 35%) 0%, hsl(4 45% 25%) 100%);
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(15 30% 12% / 0.1);
+    --shadow-medium: 0 8px 30px -8px hsl(15 30% 12% / 0.15);
+    --shadow-strong: 0 20px 50px -12px hsl(15 30% 12% / 0.25);
+
+    --sidebar-background: 30 25% 97%;
+    --sidebar-foreground: 15 30% 12%;
+    --sidebar-primary: 4 72% 56%;
+    --sidebar-primary-foreground: 30 30% 98%;
+    --sidebar-accent: 30 20% 92%;
+    --sidebar-accent-foreground: 15 30% 12%;
+    --sidebar-border: 30 15% 85%;
+    --sidebar-ring: 4 72% 56%;
+  }
+
+  .dark {
+    --background: 15 25% 8%;
+    --foreground: 30 25% 95%;
+
+    --card: 15 20% 12%;
+    --card-foreground: 30 25% 95%;
+
+    --popover: 15 25% 10%;
+    --popover-foreground: 30 25% 95%;
+
+    --primary: 4 72% 58%;
+    --primary-foreground: 15 25% 8%;
+
+    --secondary: 4 50% 40%;
+    --secondary-foreground: 30 30% 98%;
+
+    --muted: 15 20% 18%;
+    --muted-foreground: 30 15% 65%;
+
+    --accent: 35 55% 65%;
+    --accent-foreground: 15 25% 8%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 30 30% 98%;
+
+    --border: 15 20% 20%;
+    --input: 15 20% 20%;
+    --ring: 4 72% 58%;
+
+    --sidebar-background: 15 25% 8%;
+    --sidebar-foreground: 30 25% 95%;
+    --sidebar-primary: 4 72% 58%;
+    --sidebar-primary-foreground: 15 25% 8%;
+    --sidebar-accent: 15 20% 18%;
+    --sidebar-accent-foreground: 30 25% 95%;
+    --sidebar-border: 15 20% 20%;
+    --sidebar-ring: 4 72% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@layer components {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-warm);
+  }
+
+  .bg-gradient-warm {
+    background: var(--gradient-warm);
+  }
+
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .bg-gradient-dark {
+    background: var(--gradient-dark);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-medium {
+    box-shadow: var(--shadow-medium);
+  }
+
+  .shadow-strong {
+    box-shadow: var(--shadow-strong);
+  }
+
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24;
+  }
+
+  .container-tight {
+    @apply max-w-6xl mx-auto;
+  }
+
+  /* Script heading style */
+  .font-script {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.5s ease-out forwards;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+
+  .animate-marquee:hover {
+    animation-play-state: paused;
+  }
+}
