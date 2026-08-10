@@ -1,5 +1,5 @@
 import { OptimizedImage } from '@/components/OptimizedImage';
-import cafeDeOllaAsset from '@/assets/cafe-de-olla-cup.png.asset.json';
+import cafeDeOllaAsset from '@/assets/cafe-de-olla-cup.png';
 import { Coffee } from 'lucide-react';
 
 export function CafeDeOllaSection() {
@@ -10,7 +10,7 @@ export function CafeDeOllaSection() {
           {/* Image Side */}
           <div className="relative h-64 sm:h-80 lg:h-auto lg:min-h-[500px]">
             <OptimizedImage
-              src={cafeDeOllaAsset.url}
+              src={cafeDeOllaAsset}
               alt="Traditional Cafe de Olla"
               className="absolute inset-0"
               containerClassName="absolute inset-0"

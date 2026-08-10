@@ -1,26 +1,26 @@
 import { Badge } from "@/components/ui/badge";
 import { OptimizedImage } from "@/components/OptimizedImage";
 import chorizoBurrito from "@/assets/chorizo-burrito.png";
-import originalAsada from "@/assets/original-asada.jpeg.asset.json";
-import chorizoBreakfastBurrito from "@/assets/chorizo-new.jpg.asset.json";
+import originalAsada from "@/assets/original-asada.jpeg";
+import chorizoBreakfastBurrito from "@/assets/chorizo-new.jpg";
 import breakfastBowl from "@/assets/breakfast-bowl.png";
-import baconBurritoAsset from "@/assets/bacon-burrito-new.jpg.asset.json";
-import chilaquiles from "@/assets/chilaquiles-new.jpg.asset.json";
-import frenchToast from "@/assets/french-toast.jpeg.asset.json";
+import baconBurritoAsset from "@/assets/bacon-burrito-new.jpg";
+import chilaquiles from "@/assets/chilaquiles-new.jpg";
+import frenchToast from "@/assets/french-toast.jpeg";
 
 const signatureItems = [
   {
     cloverName: "The OG",
     name: "Original Asada Breakfast Burrito",
     description: "Tender carne asada, fluffy eggs, melted cheese, crispy potatoes, and our house salsa.",
-    image: originalAsada.url,
+    image: originalAsada,
     tags: ["Popular", "Signature"],
   },
   {
     cloverName: "Big Bacon",
     name: "Bacon & Egg Breakfast Burrito",
     description: "Crispy bacon with scrambled eggs, cheese, potatoes, and pico de gallo.",
-    image: baconBurritoAsset.url,
+    image: baconBurritoAsset,
     tags: ["Breakfast", "Popular"],
   },
   {
@@ -28,7 +28,7 @@ const signatureItems = [
     name: "Chorizo Breakfast Burrito",
     description:
       "Savory Mexican chorizo, fluffy scrambled eggs, crispy potatoes, melted cheese, and our house-made salsa.",
-    image: chorizoBreakfastBurrito.url,
+    image: chorizoBreakfastBurrito,
     tags: ["Breakfast", "Popular"],
   },
   {
@@ -36,7 +36,7 @@ const signatureItems = [
     name: "Traditional Chilaquiles Burrito",
     description:
       "Crispy tortilla chips tossed in our house-made red or green salsa, topped with queso fresco, crema, onions, and fresh cilantro.",
-    image: chilaquiles.url,
+    image: chilaquiles,
     tags: ["Traditional", "Breakfast"],
   },
   {
@@ -44,7 +44,7 @@ const signatureItems = [
     name: "Classic French Toast",
     description:
       "Thick-cut brioche bread dipped in a cinnamon-vanilla egg batter, grilled to golden perfection, and served with butter and warm maple syrup.",
-    image: frenchToast.url,
+    image: frenchToast,
     tags: ["Breakfast", "Popular"],
   },
   {
