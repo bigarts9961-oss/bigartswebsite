@@ -61,7 +61,7 @@ export function Header() {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-display text-sm uppercase tracking-wider transition-colors hover:text-accent text-primary-foreground/90"
+                    className="font-display text-sm uppercase tracking-widest transition-colors hover:text-accent text-primary-foreground/90"
                   >
                     {link.name}
                   </a>
@@ -70,7 +70,7 @@ export function Header() {
                     key={link.name}
                     to={link.href}
                     className={cn(
-                      'font-display text-sm uppercase tracking-wider transition-colors hover:text-accent',
+                      'font-display text-sm uppercase tracking-widest transition-colors hover:text-accent',
                       location.pathname === link.href
                         ? 'text-accent'
                         : 'text-primary-foreground/90'
@@ -143,7 +143,7 @@ export function Header() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-display text-lg uppercase tracking-wide py-2 transition-colors hover:text-accent text-primary-foreground/80"
+                  className="font-display text-lg uppercase tracking-widest py-2 transition-colors hover:text-accent text-primary-foreground/80"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.name}
@@ -153,7 +153,7 @@ export function Header() {
                   key={link.name}
                   to={link.href}
                   className={cn(
-                    'font-display text-lg uppercase tracking-wide py-2 transition-colors hover:text-accent',
+                    'font-display text-lg uppercase tracking-widest py-2 transition-colors hover:text-accent',
                     location.pathname === link.href
                       ? 'text-accent'
                       : 'text-primary-foreground/80'

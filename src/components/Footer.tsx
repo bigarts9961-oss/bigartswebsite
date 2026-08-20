@@ -158,7 +158,8 @@ export function Footer() {
           </p>
           <div className="text-center sm:text-right">
             <p className="text-primary-foreground/50 text-xs sm:text-sm">
-              Made with 🔥 by <span className="text-accent font-medium">AdvanceEdge</span>
+            Made with 🔥 by <a href="https://advanceedgellc.com/" target="_blank" rel="noopener noreferrer" className="text-accent font-medium hover:underline">AdvanceEdge</a>
+           
             </p>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import { OptimizedImage } from '@/components/OptimizedImage';
 import humbleBeginnings from '@/assets/humble-beginnings.png';
+import ourStory from '@/assets/our-story.webp';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
@@ -11,7 +12,7 @@ export function StorySection() {
           {/* Image */}
           <div className="relative">
             <OptimizedImage
-              src={humbleBeginnings}
+              src={ourStory}
               alt="Big Art at the taco stand"
               aspectRatio="4/5"
               containerClassName="rounded-xl sm:rounded-2xl shadow-strong"

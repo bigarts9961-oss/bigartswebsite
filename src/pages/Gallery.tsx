@@ -19,7 +19,7 @@ const Gallery = () => {
         />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <link rel="canonical" href="https://bigarts.techsentia.com/gallery" />
+        <link rel="canonical" href="https://bigartstacos.com/gallery" />
       </Helmet>
 
       <Header />

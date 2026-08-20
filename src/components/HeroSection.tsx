@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroVideo from "@/assets/hero-video.mp4";
+import heroPoster from "@/assets/Hero Owner.webp";
 import logoPlaceholder from "@/assets/logo.png";
 
 export function HeroSection() {
@@ -13,7 +14,7 @@ export function HeroSection() {
           muted
           loop
           playsInline
-          poster={logoPlaceholder}
+          poster={heroPoster}
           className="w-full h-full object-cover opacity-60"
         >
           <source src={heroVideo} type="video/mp4" />
