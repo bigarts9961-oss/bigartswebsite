@@ -144,6 +144,17 @@ const FAQ = () => {
           property="og:description"
           content="Get answers to common questions about Big Art's breakfast burritos, hours, location, and catering services."
         />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://bigartstacos.com/faq" />
+        <meta property="og:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/TwFfdXtj9KPaUtTHoCvbqEoYX6D3/social-images/social-1768502479604-bigarts-logo.png" />
+        <meta property="og:site_name" content="Big Art's Tacos y Burros" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="FAQ | Big Art's Tacos y Burros" />
+        <meta
+          name="twitter:description"
+          content="Get answers to common questions about Big Art's breakfast burritos, hours, location, and catering services."
+        />
+        <meta name="twitter:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/TwFfdXtj9KPaUtTHoCvbqEoYX6D3/social-images/social-1768502479604-bigarts-logo.png" />
         <link rel="canonical" href="https://bigartstacos.com/faq" />
         <script type="application/ld+json">
           {JSON.stringify({

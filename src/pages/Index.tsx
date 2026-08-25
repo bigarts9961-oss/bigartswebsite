@@ -23,6 +23,14 @@ const Index = () => {
         <meta property="og:title" content="Big Art's Tacos y Burros | Best Breakfast Burritos in Chatsworth" />
         <meta property="og:description" content="Home of the Original Asada Breakfast + Cafe de Olla ☕️ Fresh breakfast burritos made with love since dawn." />
         <meta property="og:type" content="restaurant" />
+        <meta property="og:url" content="https://bigartstacos.com" />
+        <meta property="og:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/TwFfdXtj9KPaUtTHoCvbqEoYX6D3/social-images/social-1768502479604-bigarts-logo.png" />
+        <meta property="og:site_name" content="Big Art's Tacos y Burros" />
+        <meta property="og:locale" content="en_US" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Big Art's Tacos y Burros | Best Breakfast Burritos in Chatsworth" />
+        <meta name="twitter:description" content="Home of the Original Asada Breakfast + Cafe de Olla ☕️ Fresh breakfast burritos made with love since dawn." />
+        <meta name="twitter:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/TwFfdXtj9KPaUtTHoCvbqEoYX6D3/social-images/social-1768502479604-bigarts-logo.png" />
         <link rel="canonical" href="https://bigartstacos.com" />
         <script type="application/ld+json">
           {JSON.stringify({
