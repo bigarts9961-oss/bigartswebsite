@@ -8,7 +8,7 @@ import { Label } from '@/components/ui/label';
 import { Helmet } from 'react-helmet-async';
 import { Users, Calendar, Utensils, PartyPopper, CheckCircle, Instagram, Phone, Mail } from 'lucide-react';
 import salsaBar from '@/assets/salsa-bar.png';
-import cateringPhoto from '@/assets/catering-photo.jpg.asset.json';
+import cateringPhoto from '@/assets/catering-photo.webp';
 import { OptimizedImage } from '@/components/OptimizedImage';
 import { useToast } from '@/hooks/use-toast';
 
@@ -190,7 +190,7 @@ const Catering = () => {
                 {/* Catering Photo */}
                 <div className="mb-8">
                   <img
-                    src={cateringPhoto.url}
+                    src={cateringPhoto}
                     alt="Guest serving themselves from Big Art's catering setup at an outdoor event"
                     loading="lazy"
                     className="w-full h-auto rounded-2xl shadow-medium"
