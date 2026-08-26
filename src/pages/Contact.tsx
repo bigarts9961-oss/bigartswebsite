@@ -1,5 +1,4 @@
 import { useState, useRef } from 'react';
-import emailjs from '@emailjs/browser';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -13,11 +12,6 @@ import contactHero from '@/assets/contact-hero.jpg';
 import { locations } from '@/data/locations';
 import { cn } from '@/lib/utils';
 
-// EmailJS config — replace with your own IDs from emailjs.com
-const EMAILJS_SERVICE_ID = 'service_3tsquk9';
-const EMAILJS_TEMPLATE_ID = 'template_1w7izrd';
-const EMAILJS_PUBLIC_KEY = 'T85h7Qe6keWFCoMza';
-
 const Contact = () => {
   const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
@@ -28,29 +22,87 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!formRef.current) return;
+
+    if (isSubmitting) return;
 
     setIsSubmitting(true);
 
     try {
-      await emailjs.sendForm(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        formRef.current,
-        { publicKey: EMAILJS_PUBLIC_KEY }
-      );
+      const form = e.currentTarget;
+      const formData = new FormData(form);
+
+      const submissionData = {
+        name: String(formData.get('name') || '').trim(),
+        email: String(formData.get('email') || '').trim(),
+        phone: String(formData.get('phone') || '').trim(),
+        subject: String(formData.get('subject') || '').trim(),
+        message: String(formData.get('message') || '').trim(),
+      };
+
+      // Client-side validation
+      if (
+        !submissionData.name ||
+        !submissionData.email ||
+        !submissionData.subject ||
+        !submissionData.message
+      ) {
+        toast({
+          title: 'Missing Information',
+          description: 'Please complete all required fields before submitting.',
+          variant: 'destructive',
+        });
+
+        setIsSubmitting(false);
+        return;
+      }
+
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(submissionData),
+      });
+
+      let result: {
+        success?: boolean;
+        message?: string;
+        error?: string;
+        id?: string;
+      } = {};
+
+      try {
+        result = await response.json();
+      } catch {
+        result = {};
+      }
+
+      if (!response.ok) {
+        throw new Error(
+          result.error || result.message || `Request failed with status ${response.status}`
+        );
+      }
+
+      if (!result.success) {
+        throw new Error(result.error || result.message || 'Unable to send your message.');
+      }
 
       setIsSubmitted(true);
-      formRef.current.reset();
+      form.reset();
+
       toast({
         title: 'Message Sent!',
         description: "We'll get back to you soon."
       });
     } catch (error) {
-      console.error('EmailJS error:', error);
+      console.error('Contact form submission error:', error);
+
+      const errorMessage =
+        error instanceof Error ? error.message : 'Unable to send your message.';
+
       toast({
         title: 'Something went wrong',
-        description: 'Please try again or reach us directly on Instagram.',
+        description: `${errorMessage} Please try again or reach us directly on Instagram.`,
         variant: 'destructive'
       });
     } finally {

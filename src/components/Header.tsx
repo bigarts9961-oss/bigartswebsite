@@ -10,10 +10,10 @@ const ORDER_URL = 'https://big-arts-tacos-los-angeles.cloveronline.com/menu/all'
 const navLinks = [
   { name: 'Menu', href: ORDER_URL, external: true },
   { name: 'Our Story', href: '/story' },
-  { name: 'Catering', href: '/catering' },
-  { name: 'Contact Us', href: '/contact' },
-  { name: 'FAQ', href: '/faq' },
+  { name: 'Catering', href: '/catering' },  
   { name: 'Gallery', href: '/gallery' },
+  { name: 'FAQ', href: '/faq' },
+  { name: 'Contact Us', href: '/contact' },
 ];
 
 export function Header() {
