@@ -70,7 +70,7 @@ export default async function handler(req: any, res: any) {
       replyTo?: string;
     } = {
       from: "Big Art's Tacos Catering <info@bigartstacos.com>",
-      to: ["rahul@expansureglobal.com"],
+      to: ["artrodriguez@bigartstacos.com"],
       subject: `New Catering Inquiry from ${name}`,
       html: `
         <div style="font-family: Arial, sans-serif; line-height: 1.6; max-width: 700px; margin: 0 auto; color: #222;">
