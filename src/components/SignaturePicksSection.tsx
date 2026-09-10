@@ -1,12 +1,12 @@
 import { Badge } from "@/components/ui/badge";
 import { OptimizedImage } from "@/components/OptimizedImage";
 import chorizoBurrito from "@/assets/chorizo-burrito.png";
-import originalAsada from "@/assets/original-asada.jpeg";
-import chorizoBreakfastBurrito from "@/assets/chorizo-new.jpg";
-import breakfastBowl from "@/assets/breakfast-bowl.png";
-import baconBurritoAsset from "@/assets/bacon-burrito-new.jpg";
-import chilaquiles from "@/assets/chilaquiles-new.jpg";
-import frenchToast from "@/assets/french-toast.jpeg";
+import originalAsada from "@/assets/original-asada-one.webp";
+import chorizoBreakfastBurrito from "@/assets/chorizo-one.webp";
+import breakfastBowl from "@/assets/burrito-bowl.webp";
+import baconBurritoAsset from "@/assets/bacon-burrito-one.webp";
+import chilaquiles from "@/assets/chilaquiles-one.webp";
+import frenchToast from "@/assets/french-toast-one.webp";
 
 const signatureItems = [
   {
@@ -17,7 +17,7 @@ const signatureItems = [
     tags: ["Popular", "Signature"],
   },
   {
-    cloverName: "Big Bacon",
+    cloverName: "Pigs Fly",
     name: "Bacon & Egg Breakfast Burrito",
     description: "Crispy bacon with scrambled eggs, cheese, potatoes, and pico de gallo.",
     image: baconBurritoAsset,
@@ -32,7 +32,7 @@ const signatureItems = [
     tags: ["Breakfast", "Popular"],
   },
   {
-    cloverName: "Chila Burro",
+    cloverName: "El Jefe",
     name: "Traditional Chilaquiles Burrito",
     description:
       "Crispy tortilla chips tossed in our house-made red or green salsa, topped with queso fresco, crema, onions, and fresh cilantro.",
@@ -40,7 +40,7 @@ const signatureItems = [
     tags: ["Traditional", "Breakfast"],
   },
   {
-    cloverName: "Big Toast",
+    cloverName: "French Toast Burrito",
     name: "Classic French Toast",
     description:
       "Thick-cut brioche bread dipped in a cinnamon-vanilla egg batter, grilled to golden perfection, and served with butter and warm maple syrup.",
@@ -48,7 +48,7 @@ const signatureItems = [
     tags: ["Breakfast", "Popular"],
   },
   {
-    cloverName: "Big Bowl",
+    cloverName: "Burrito Bowl",
     name: "Breakfast Burrito Bowl",
     description: "All the fixings in a bowl: chilaquiles, eggs, bacon, potatoes, and pico.",
     image: breakfastBowl,
