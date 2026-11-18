@@ -20,7 +20,17 @@ export function OptimizedImage({
 }: OptimizedImageProps) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isInView, setIsInView] = useState(priority);
-  const imgRef = useRef<HTMLImageElement>(null);
+  const imgRef = useRef<HTMLDivElement>(null);
+  const imageElementRef = useRef<HTMLImageElement>(null);
+
+  // Pre-rendered images can finish loading before React attaches onLoad.
+  useEffect(() => {
+    const image = imageElementRef.current;
+
+    if (image?.complete && image.naturalWidth > 0) {
+      setIsLoaded(true);
+    }
+  }, [isInView, src]);
 
   useEffect(() => {
     if (priority) return;
@@ -70,6 +80,7 @@ export function OptimizedImage({
       
       {isInView && (
         <img
+          ref={imageElementRef}
           src={src}
           alt={alt}
           loading={priority ? 'eager' : 'lazy'}
