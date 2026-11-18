@@ -2,6 +2,8 @@ import { Play, Star } from 'lucide-react';
 import eaterLaFeature from '@/assets/eater-la-feature.jpg';
 import spotlightMax from '@/assets/spotlight-max.mp4';
 import sfvEats from '@/assets/sfv-eats.mp4';
+import spotlightPoster from '@/assets/spotlight-max-poster.webp';
+import sfvPoster from '@/assets/sfv-eats-poster.webp';
 
 const mediaFeatures = [
   {
@@ -14,6 +16,7 @@ const mediaFeatures = [
   {
     id: 2,
     title: 'Spotlight with Max',
+    poster: spotlightPoster,
     type: 'video' as const,
     video: spotlightMax,
     description: 'Featured interview with the team at Big Art\'s Tacos.',
@@ -21,6 +24,7 @@ const mediaFeatures = [
   {
     id: 3,
     title: 'San Fernando Valley Eats',
+    poster: sfvPoster,
     type: 'video' as const,
     video: sfvEats,
     description: 'A local favorite featured by SFV Eats.',
@@ -66,9 +70,10 @@ export const MediaFeaturesSection = () => {
                 ) : (
                   <video
                     src={feature.video}
+                    poster={feature.poster}
                     className="w-full h-full object-cover"
                     controls
-                    preload="metadata"
+                    preload="none"
                     playsInline
                   />
                 )}

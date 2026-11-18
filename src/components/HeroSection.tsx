@@ -1,24 +1,49 @@
+import { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroVideo from "@/assets/hero-video.mp4";
 import heroPoster from "@/assets/Hero Owner.webp";
 import logoPlaceholder from "@/assets/logo.png";
 
+const DESKTOP_QUERY = "(min-width: 768px)";
+
 export function HeroSection() {
+  // Starts false so phones never request the video file.
+  const [showVideo, setShowVideo] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia(DESKTOP_QUERY);
+    const update = () => setShowVideo(mediaQuery.matches);
+
+    update();
+    mediaQuery.addEventListener("change", update);
+
+    return () => mediaQuery.removeEventListener("change", update);
+  }, []);
+
   return (
     <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-stone-50">
-      {/* Video Background */}
+      {/* Background: image on mobile, video on tablet and desktop */}
       <div className="absolute inset-0">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster={heroPoster}
-          className="w-full h-full object-cover opacity-60"
-        >
-          <source src={heroVideo} type="video/mp4" />
-        </video>
+        {showVideo ? (
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster={heroPoster}
+            className="w-full h-full object-cover opacity-60"
+          >
+            <source src={heroVideo} type="video/mp4" />
+          </video>
+        ) : (
+          <img
+            src={heroPoster}
+            alt=""
+            aria-hidden="true"
+            className="w-full h-full object-cover opacity-60"
+          />
+        )}
         <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-stone-50/50 to-white/80" />
       </div>
 
