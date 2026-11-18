@@ -2,6 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Analytics } from "@vercel/analytics/react";
 import { Outlet } from "react-router-dom";
 import type { RouteRecord } from "vite-react-ssg";
 import Index from "./pages/Index";
@@ -29,6 +30,7 @@ const Layout = () => (
       <Sonner />
       <ScrollToTop />
       <Outlet />
+      <Analytics />
     </TooltipProvider>
   </QueryClientProvider>
 );
